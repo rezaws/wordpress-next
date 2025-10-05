@@ -1,6 +1,6 @@
 <?php 
 
-function ads_custom_post_type() {
+function add_custom_post_types() {
     register_post_type('ads', [
         'labels' => [
             'name' => 'Ads',
@@ -9,7 +9,7 @@ function ads_custom_post_type() {
         'public' => true,
         'has_archive' => true,
         'show_in_rest' => true, // برای REST API
-        'supports' => ['title', 'editor', 'thumbnail', 'custom-fields'],
+        'supports' => ['title', 'editor', 'custom-fields'],
         'menu_icon' => 'dashicons-portfolio',
     ]);
 
@@ -25,4 +25,5 @@ function ads_custom_post_type() {
         'menu_icon' => 'dashicons-star-filled',
     ] );
 }
-add_action('init', 'ads_custom_post_type');
+
+add_action('init', 'add_custom_post_types');
